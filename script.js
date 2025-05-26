@@ -14,22 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hover Effects for Interactive Items
-    // Add 'interactive-item' class to elements in HTML you want to have this effect
-    const interactiveItems = document.querySelectorAll('.interactive-item');
-    interactiveItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'scale(1.05)';
-            item.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)';
-            item.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
-        });
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'scale(1)';
-            item.style.boxShadow = 'none';
-        });
-    });
-
     // Simple Particle Animation
+    // Note: Hover effects for '.interactive-item' are now handled in style.css
     const particleContainer = document.createElement('div');
     particleContainer.setAttribute('id', 'particle-container');
     document.body.appendChild(particleContainer);
@@ -39,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     let particles = [];
-    const numParticles = 50;
+    const numParticles = 30; // Reduced particle count
 
     function resizeCanvas() {
         canvas.width = particleContainer.offsetWidth;
@@ -92,12 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function initParticles() {
         particles = [];
         for (let i = 0; i < numParticles; i++) {
-            const size = Math.random() * 3 + 1; // Particle size
+            const size = Math.random() * 2 + 0.5; // Reduced particle size (0.5 to 2.5)
             const x = Math.random() * (canvas.width - size * 2) + size;
             const y = Math.random() * (canvas.height - size * 2) + size;
-            const speedX = (Math.random() - 0.5) * 0.5; // Slower speed
-            const speedY = (Math.random() - 0.5) * 0.5; // Slower speed
-            const color = 'rgba(76, 175, 80, 0.5)'; // Semi-transparent green
+            const speedX = (Math.random() - 0.5) * 0.3; // Further reduced speed
+            const speedY = (Math.random() - 0.5) * 0.3; // Further reduced speed
+            const color = 'rgba(255, 215, 0, 0.4)'; // Cyber Yellow with 40% opacity (more subtle)
             particles.push(new Particle(x, y, size, color, speedX, speedY));
         }
     }
