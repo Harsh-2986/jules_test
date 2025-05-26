@@ -1,0 +1,173 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222; /* Dark grey background */
+    color: #eee; /* Light text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Glowing effect on hover - can be enhanced */
+    text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50;
+}
+
+h1, h2, h3 {
+    color: #4CAF50; /* Greenish accent color for headings */
+    text-shadow: 0 0 8px #4CAF50, 0 0 12px #4CAF50; /* Glowing text effect */
+    margin-bottom: 1rem;
+}
+
+section {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Styling for project entries, previously inline */
+.project-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #444; /* Slightly darker than section for contrast */
+    border-radius: 5px;
+}
+
+.project-entry img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    /* Consider adding display: block; and margin: auto; if centering is desired */
+    /* Also, object-fit: cover; can be useful if aspect ratios differ */
+}
+
+/* Styling for skills list, previously inline */
+#skills ul {
+    list-style-type: square;
+    margin-left: 20px; /* Retain margin for bullet points */
+    padding-left: 0; /* Reset padding if browser adds any */
+}
+
+#skills ul li {
+    margin-bottom: 5px; /* Add some spacing between skill items */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* About Me Image Styling */
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: block; /* To enable margin auto centering if needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Styling for footer links, previously inline */
+footer#contact a {
+    color: #eee;
+    text-decoration: none; /* Assuming default link styles might add underline */
+    margin: 0 10px;
+}
+
+footer#contact a:hover {
+    color: #4CAF50; /* Consistent hover with nav links */
+    text-shadow: 0 0 5px #4CAF50; /* Consistent hover with nav links */
+}
+
+/* Placeholder for floating element */
+.floating-box {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    margin: 30px auto;
+    border-radius: 10px;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Basic Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Center text for block-level nav items */
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    .floating-box {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: 15px;
+    }
+
+    .floating-box {
+        width: 60px;
+        height: 60px;
+    }
+}
